@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>2048</title>
+		<link rel="stylesheet" href="2048.css">
+		<script src="2048.js"></script>
+	</head>
+	<body>
+		<h1>2048</h1>
+		<h2>Score: <span id="score">0</span></h2>
+		<div id="board">
+		</div>
+		<div id="arrows">
+			<button type="button" id="up" onclick="moveUp()">^</button>
+			<button type="button" id="left" onclick="moveLeft()">&lt</button>
+			<button type="button" id="down" onclick="moveDown()">v</button>
+			<button type="button" id="right" onclick="moveRight()">&gt</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+* {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+body {
+	background-color: #fbf9f1;
+}
+
+h1 {
+	color: #5c554a;
+	font-size: 3vw;
+	margin: 2% 0;
+}
+
+h2 {
+	color: #5c554a;
+    font-size: 2vw;
+	margin: 1% 0;
+}
+
+#board {
+	width: 34%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+
+	border: 2px solid #bcaea1;
+	background-color: #cac0b4;
+}
+
+#arrows>* {
+	background-color: #cac0b4;
+	color: #f0e7da;
+	font-weight: bold;
+	border: 2px solid #bcaea1;
+	width: 5%;
+	margin: 0 auto;
+}
+
+#arrows>*:hover {
+	cursor: pointer;
+}
+
+#up {
+	display: block;
+	margin-top: 0.5%;
+	margin-bottom: 0.5%;
+}
+
+.tile {
+	width: 24%;
+	padding-top: 8%;
+	padding-bottom: 8%;
+
+	font-size: 2vw;
+	font-weight: bold;
+	border: 2px solid #bcaea1;
+}
+
+.tile2 {
+	background-color: #f0e7da;
+	color: #786e61;
+}
+
+.tile4 {
+	background-color: #ede5c8;
+	color: #786e61;
+}
+
+.tile8 {
+	background-color: #f2b977; 
+	color: white;
+}
+
+.tile16 {
+	background-color: #f59563;
+	color: white;
+}
+
+.tile32 {
+	background-color: #f67c5f;
+	color: white;
+}
+
+.tile64 {
+	background-color: #f65e3b;
+	color: white;
+}
+
+.tile128 {
+	background-color: #edcf72;
+	color: white;
+}
+
+.tile256 {
+	background-color: #edca64;
+	color: white;
+}
+
+.tile512 {
+	background-color: #edc651;
+	color: white;
+}
+
+.tile1024 {
+	background-color: #eec744;
+	color: white;
+}
+
+.tile2048 {
+	background-color: #ecc32e;
+	color: white;
+}
