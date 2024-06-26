@@ -60,55 +60,55 @@ h2 {
 
 .tile2 {
 	background-color: #f0e7da;
-	color: #786e61;
+	color: #786e61 !important;
 }
 
 .tile4 {
 	background-color: #ede5c8;
-	color: #786e61;
+	color: #786e61 !important;
 }
 
 .tile8 {
 	background-color: #f2b977; 
-	color: white;
+	color: white !important;
 }
 
 .tile16 {
 	background-color: #f59563;
-	color: white;
+	color: white !important;
 }
 
 .tile32 {
 	background-color: #f67c5f;
-	color: white;
+	color: white !important;
 }
 
 .tile64 {
 	background-color: #f65e3b;
-	color: white;
+	color: white !important;
 }
 
 .tile128 {
 	background-color: #edcf72;
-	color: white;
+	color: white !important;
 }
 
 .tile256 {
 	background-color: #edca64;
-	color: white;
+	color: white !important;
 }
 
 .tile512 {
 	background-color: #edc651;
-	color: white;
+	color: white !important;
 }
 
 .tile1024 {
 	background-color: #eec744;
-	color: white;
+	color: white !important;
 }
 
 .tile2048 {
 	background-color: #ecc32e;
-	color: white;
+	color: white !important;
 }

@@ -9,10 +9,10 @@ window.onload = function() {
 
 function startGame() {
 	board = [
-		[4, 2, 2, 0],
-		[16, 16, 2, 8],
-		[2, 2, 2, 0],
-		[0, 0, 4, 0]
+		[0, 0, 0, 0],
+		[0, 0, 0, 0],
+		[0, 0, 0, 0],
+		[0, 0, 0, 0]
 	];
 
 	for (let i = 0; i < rows; ++i) {
@@ -24,6 +24,35 @@ function startGame() {
 			document.getElementById("board").append(tile);
 		}
 	}
+	addTile();
+	addTile();
+}
+
+function addTile() {
+	if (!boardIsFull()) {
+		row = Math.floor(Math.random() * rows);
+		column = Math.floor(Math.random() * columns);
+		if (board[row][column] == 0) {
+			board[row][column] = 2;
+			let tile = document.getElementById(row.toString() + "_" + column.toString());
+			tile.innerText = "2";
+			tile.classList.add("tile2");
+			tile.style.userSelect = "auto";
+		} else {
+			addTile();
+		}
+	}
+}
+
+function boardIsFull() {
+	for (let i = 0; i < rows; ++i) {
+		for (let j = 0; j < columns; ++j) {
+			if (board[i][j] == 0) {
+				return false;
+			}
+		}
+	}
+	return true;
 }
 
 function updateTile(tile, value) {
@@ -36,8 +65,21 @@ function updateTile(tile, value) {
 		tile.style.userSelect = "auto";
 	} else if (0 === value) {
 		tile.style.userSelect = "none";
+		tile.style.color = "#cac0b4";
 	}
 }
+
+document.addEventListener("keyup", (e) => {
+	if (e.code == "ArrowLeft") {
+		moveLeftAndUpdate();
+	} else if (e.code == "ArrowRight") {
+		moveRightAndUpdate();
+	} else if (e.code == "ArrowUp") {
+		moveUpAndUpdate();
+	} else if (e.code == "ArrowDown") {
+		moveDownAndUpdate();	
+	}
+})
 
 function moveLeftAndUpdate() {
 	for (let i = 0; i < rows; ++i) {
@@ -45,6 +87,7 @@ function moveLeftAndUpdate() {
 		updateTiles(i);
 	}
 	document.getElementById("score").innerText = score;
+	addTile();
 }
 
 function moveLeft(i, row) {
@@ -69,6 +112,7 @@ function moveRightAndUpdate() {
 		updateTiles(i);
 	}
 	document.getElementById("score").innerText = score;
+	addTile();
 }
 
 function moveRight(i, row) {
@@ -96,6 +140,7 @@ function moveUpAndUpdate() {
 		updateTiles(i);	
 	}
 	document.getElementById("score").innerText = score;
+	addTile();
 }
 
 function moveUp(i, column) {
@@ -121,13 +166,13 @@ function moveDownAndUpdate() {
 		updateTiles(i);	
 	}
 	document.getElementById("score").innerText = score;
+	addTile();
 }
 
 function moveDown(i, column) {
 	for (let j = 0; j < columns; ++j) {
 		column.push(board[j][i]);
 	}
-	console.log(column);
 	column = moveRight(i, column);
 	updateColumn(i, column);
 }
